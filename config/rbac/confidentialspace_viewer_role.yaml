@@ -1,0 +1,27 @@
+# permissions for end users to view confidentialspaces.
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  labels:
+    app.kubernetes.io/name: clusterrole
+    app.kubernetes.io/instance: confidentialspace-viewer-role
+    app.kubernetes.io/component: rbac
+    app.kubernetes.io/created-by: confidential-space-operator
+    app.kubernetes.io/part-of: confidential-space-operator
+    app.kubernetes.io/managed-by: kustomize
+  name: confidentialspace-viewer-role
+rules:
+- apiGroups:
+  - tee.cloud.google.com
+  resources:
+  - confidentialspaces
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - tee.cloud.google.com
+  resources:
+  - confidentialspaces/status
+  verbs:
+  - get

@@ -1,0 +1,4 @@
+## Append samples of your project ##
+resources:
+- tee_v1alpha1_confidentialspace.yaml
+#+kubebuilder:scaffold:manifestskustomizesamples
